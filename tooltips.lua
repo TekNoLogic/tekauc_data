@@ -5,19 +5,19 @@ local myname, ns = ...
 local function Inject(frame)
 	local _, link = frame:GetItem()
 	local id = link and ns.ids[link]
-	if id then
-		local min = tekauc_data[id]
-		local _, _, _, _, _, _, _, maxStack = GetItemInfo(id)
+	if not id then return end
 
-		if min then
-			local buyout = ns.GS(min)
-			frame:AddDoubleLine("AH buyout:", buyout)
+	local min = tekauc_data[id]
+	if not min then return end
 
-			if (maxStack or 0) > 1 then
-				local stackbuyout = ns.GS(min*maxStack)
-				frame:AddDoubleLine("AH stack buyout:", stackbuyout)
-			end
-		end
+	local _, _, _, _, _, _, _, maxStack = GetItemInfo(id)
+
+	local buyout = ns.GS(min)
+	frame:AddDoubleLine("AH buyout:", buyout)
+
+	if (maxStack or 0) > 1 then
+		local stackbuyout = ns.GS(min*maxStack)
+		frame:AddDoubleLine("AH stack buyout:", stackbuyout)
 	end
 end
 
