@@ -7,7 +7,7 @@ local function Inject(frame)
 	local id = link and ns.ids[link]
 	if not id then return end
 
-	local min = tekauc_data[id]
+	local min = ns.db[ns.server][id]
 	if not min then return end
 
 	local _, _, _, _, _, _, _, maxStack = GetItemInfo(id)

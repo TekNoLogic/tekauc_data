@@ -3,10 +3,8 @@
 ## Title: tekauc data
 ## Notes: Persistant storage for tekauc
 ## Author: Tekkub Stoutwrithe
-## Version: Alpha
-## X-Website: http://www.tekkub.net/
 
-## SavedVariablesPerCharacter: tekauc_data
+## SavedVariables: tekauc_dataDB
 
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Always: delayed

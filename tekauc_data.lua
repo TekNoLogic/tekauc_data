@@ -2,7 +2,11 @@
 local myname, ns = ...
 
 
-tekauc_data = tekauc_data or {}
+ns.dbname = "tekauc_dataDB"
+function ns.OnLoad()
+	ns.server = GetRealmName()
+	ns.db[ns.server] = ns.db[ns.server] or {}
+end
 
 
 function ns.ADDON_LOADED(event, addon)
